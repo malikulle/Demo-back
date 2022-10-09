@@ -1,0 +1,12 @@
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\bin\Debug\net6.0\ECommerce.Framework.SharedLibary.deps.json
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\bin\Debug\net6.0\ECommerce.Framework.SharedLibary.dll
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\bin\Debug\net6.0\ECommerce.Framework.SharedLibary.pdb
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.csproj.AssemblyReference.cache
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.AssemblyInfoInputs.cache
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.AssemblyInfo.cs
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.csproj.CoreCompileInputs.cache
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.dll
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\refint\ECommerce.Framework.SharedLibary.dll
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ECommerce.Framework.SharedLibary.pdb
+C:\Users\malik\source\repos\ECommerce\Framework\ECommerce.Framework.SharedLibary\obj\Debug\net6.0\ref\ECommerce.Framework.SharedLibary.dll
