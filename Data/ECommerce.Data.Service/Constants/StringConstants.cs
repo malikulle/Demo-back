@@ -12,5 +12,6 @@ namespace ECommerce.Data.Service.Constants
         public const string LoginError = "LoginError";
         public const string PasswordNull = "PasswordIsNull";
         public const string ParameterExist = "ParameterExist";
+        public const string BasketError = "BasketError";
     }
 }

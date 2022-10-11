@@ -5,6 +5,7 @@ using ECommerce.Data.Domain.Configuration;
 using ECommerce.Data.Domain.Enums.Configuration;
 using ECommerce.Data.Domain.Logging;
 using ECommerce.Data.Domain.Membership;
+using ECommerce.Data.Domain.Sales;
 using ECommerce.Framework.SharedLibary.Paging;
 using ECommerce.Module.Wrapper.ServiceModels.AddressBook.City;
 using ECommerce.Module.Wrapper.ServiceModels.AddressBook.Country;
@@ -22,6 +23,8 @@ using ECommerce.Module.Wrapper.ServiceModels.Membership.Permission;
 using ECommerce.Module.Wrapper.ServiceModels.Membership.Role;
 using ECommerce.Module.Wrapper.ServiceModels.Membership.RolePermission;
 using ECommerce.Module.Wrapper.ServiceModels.Membership.User;
+using ECommerce.Module.Wrapper.ServiceModels.Sales.Basket;
+using ECommerce.Module.Wrapper.ServiceModels.Sales.BasketItem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,6 +106,12 @@ namespace ECommerce.Module.Wrapper.Profiles
 
             this.CreateMap<AuditLog, AuditLogModel>();
             this.CreateMap<IPaginate<AuditLog>, AuditLogPaginationResponse>().ReverseMap();
+            #endregion
+
+            #region Sales
+            this.CreateMap<Basket, BasketModel>().ReverseMap();
+            this.CreateMap<BasketItem, BasketItemModel>().ReverseMap();
+
             #endregion
         }
     }

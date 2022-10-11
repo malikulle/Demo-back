@@ -4,6 +4,7 @@ using ECommerce.Data.Domain.Sales;
 using ECommerce.Data.Persistence.Repository;
 using ECommerce.Data.Service.Abstract.Membership;
 using ECommerce.Data.Service.Abstract.Sales;
+using ECommerce.Data.Service.Constants;
 using ECommerce.Framework.SharedLibary.Domain.Enums;
 using ECommerce.Framework.SharedLibary.Result;
 using Microsoft.EntityFrameworkCore;
@@ -30,10 +31,74 @@ namespace ECommerce.Data.Service.Concrete.Sales
             _productRepository = productRepository;
         }
 
+        public ServiceObjectResult<Basket> AddToBasket(long basketID, int quantity, long productID)
+        {
+            var result = new ServiceObjectResult<Basket>();
+            try
+            {
+                var userID = _tokenService.GetCurrentUserID();
+                Basket persistent = null;
+                if (basketID == 0)
+                {
+                    persistent = _repository.QueryAll(op => op.UserID == userID && op.BasketStatus == BasketStatusValue.InProgress)
+                        .Include(op => op.BasketItems).FirstOrDefault();
+                    if (persistent == null)
+                        persistent = this.CreateEmptyBasket(userID);
+
+                }
+                else
+                    persistent = this.GetBasket(basketID);
+
+                if (persistent == null)
+                {
+                    result.Fail(StringConstants.BasketError);
+                    return result;
+                }
+
+                if (persistent.BasketItems == null)
+                    persistent.BasketItems = new List<BasketItem>();
+
+                var basketItem = persistent.BasketItems.FirstOrDefault(op => op.ProductID == productID);
+
+                if (basketItem != null)
+                {
+                    basketItem.Quantity = quantity;
+                }
+                else
+                {
+                    basketItem = new BasketItem()
+                    {
+                        BasketID = basketID,
+                        Quantity = quantity,
+                        ProductID = productID
+                    };
+                    persistent.BasketItems.Add(basketItem);
+                }
+
+                this.Update(persistent);
+                result.SetData(this.GetBasket(persistent.ID));
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
         public Basket GetCurrentUserBasket()
         {
             var userID = _tokenService.GetCurrentUserID();
-            var entity = _repository.QueryAll(op => op.UserID == userID && op.BasketStatus == BasketStatusValue.InProgress).Include(op => op.BasketItems).FirstOrDefault();
+            var entity = _repository.QueryAll(op => op.UserID == userID && op.BasketStatus == BasketStatusValue.InProgress).FirstOrDefault();
+            if(entity != null)
+            {
+                entity.BasketItems = _basketItemRepository.QueryAll(op => op.BasketID == entity.ID).Include(op => op.Product).ToList();
+            }
+            return entity;
+        }
+
+        public Basket GetBasket(long ID)
+        {
+            var entity = _repository.QueryAll(op => op.ID == ID).FirstOrDefault();
             if (entity != null)
             {
                 entity.BasketItems = _basketItemRepository.QueryAll(op => op.BasketID == entity.ID).Include(op => op.Product).ToList();
@@ -49,11 +114,7 @@ namespace ECommerce.Data.Service.Concrete.Sales
                 Basket persistent = null;
                 if (entity != null)
                 {
-                    if (entity.ID == 0)
-                        persistent = _repository.Query().Where(op => op.UserID == entity.UserID && op.BasketStatus == BasketStatusValue.InProgress).FirstOrDefault();
-                    else
-                        persistent = _repository.Query().Where(op => op.ID == entity.ID).FirstOrDefault();
-
+                    persistent = _repository.Query().Where(op => op.ID == entity.ID).FirstOrDefault();
                     persistent.DateModified = DateTime.Now;
                     persistent.StatusID = entity.StatusID;
                 }
@@ -106,9 +167,8 @@ namespace ECommerce.Data.Service.Concrete.Sales
         public void UpdatePrice(Basket entity)
         {
             decimal BasketPrice = 0;
-            decimal TaxPrice = 0;
-            decimal ShippingPrice = 0;
-            if(entity.BasketItems != null)
+            decimal ShippingPrice = 10;
+            if (entity.BasketItems != null)
             {
 
                 foreach (var basketItem in entity.BasketItems)
@@ -120,9 +180,21 @@ namespace ECommerce.Data.Service.Concrete.Sales
                 }
             }
             entity.BasketPrice = BasketPrice;
-            entity.TaxPrice = TaxPrice;
+            entity.TaxPrice = Math.Round((BasketPrice * (decimal)(0.18)), 2, MidpointRounding.AwayFromZero);
             entity.ShippingPrice = ShippingPrice;
             entity.TotalPrice = entity.BasketPrice + entity.TaxPrice + entity.ShippingPrice;
         }
+
+        public Basket CreateEmptyBasket(long userID)
+        {
+            var basket = new Basket();
+            basket.UserID = userID;
+            basket.BasketStatus = BasketStatusValue.InProgress;
+            _repository.Update(basket);
+            return basket;
+            ;
+        }
+
+        
     }
 }

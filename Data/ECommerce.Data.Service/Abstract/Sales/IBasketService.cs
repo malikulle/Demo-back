@@ -11,6 +11,8 @@ namespace ECommerce.Data.Service.Abstract.Sales
     public interface IBasketService
     {
         Basket GetCurrentUserBasket();
+        Basket GetBasket(long ID);
         ServiceObjectResult<Basket> Update(Basket entity);
+        ServiceObjectResult<Basket> AddToBasket(long basketID, int quantity, long productID);
     }
 }
