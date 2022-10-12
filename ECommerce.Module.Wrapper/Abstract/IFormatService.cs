@@ -1,5 +1,6 @@
 ﻿using ECommerce.Module.Wrapper.ServiceModels.Catalog.Product;
 using ECommerce.Module.Wrapper.ServiceModels.Membership.User;
+using ECommerce.Module.Wrapper.ServiceModels.Sales.BasketItem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace ECommerce.Module.Wrapper.Abstract
     {
         void Format(UserModel model);
         void Format(ProductModel model);
+        void Format(BasketItemModel model);
     }
 }

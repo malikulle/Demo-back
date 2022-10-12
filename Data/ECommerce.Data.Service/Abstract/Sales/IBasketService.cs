@@ -14,5 +14,7 @@ namespace ECommerce.Data.Service.Abstract.Sales
         Basket GetBasket(long ID);
         ServiceObjectResult<Basket> Update(Basket entity);
         ServiceObjectResult<Basket> AddToBasket(long basketID, int quantity, long productID);
+        ServiceObjectResult<Basket> RemoveFromBasket(long basketID, long productID);
+        ServiceObjectResult<Basket> UpdateQuantity(long basketID, int quantity, long productID);
     }
 }

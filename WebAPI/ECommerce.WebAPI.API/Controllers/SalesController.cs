@@ -44,5 +44,37 @@ namespace ECommerce.WebAPI.API.Controllers
             }
             return result;
         }
+
+        [Authorize]
+        [HttpPost("RemoveFromBasket")]
+        public ServiceObjectResult<BasketModel> RemoveFromBasket([FromBody] WebApiObjectRequest<BasketItemModel> request)
+        {
+            var result = new ServiceObjectResult<BasketModel>();
+            try
+            {
+                result = this.Client.Sales.RemoveFromBasket(request.Data);
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
+        [Authorize]
+        [HttpPost("UpdateBasketQuantity")]
+        public ServiceObjectResult<BasketModel> UpdateBasketQuantity([FromBody] WebApiObjectRequest<BasketItemModel> request)
+        {
+            var result = new ServiceObjectResult<BasketModel>();
+            try
+            {
+                result = this.Client.Sales.UpdateBasketQuantity(request.Data);
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
     }
 }

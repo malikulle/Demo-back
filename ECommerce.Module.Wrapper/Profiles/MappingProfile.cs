@@ -110,7 +110,10 @@ namespace ECommerce.Module.Wrapper.Profiles
 
             #region Sales
             this.CreateMap<Basket, BasketModel>().ReverseMap();
-            this.CreateMap<BasketItem, BasketItemModel>().ReverseMap();
+            this.CreateMap<BasketItem, BasketItemModel>()
+                .ForMember(op => op.ProductName, opt => opt.MapFrom(op => op.Product.Name))
+                .ForMember(op => op.ImagePath, opt => opt.MapFrom(op => op.Product.ImagePath))
+                .ReverseMap();
 
             #endregion
         }

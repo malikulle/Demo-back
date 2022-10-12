@@ -13,5 +13,7 @@ namespace ECommerce.Module.Wrapper.Abstract
     {
         ServiceObjectResult<BasketModel> GetCurrentUserBasket();
         ServiceObjectResult<BasketModel> AddToBasket(BasketItemModel model);
+        ServiceObjectResult<BasketModel> RemoveFromBasket(BasketItemModel model);
+        ServiceObjectResult<BasketModel> UpdateBasketQuantity(BasketItemModel model);
     }
 }

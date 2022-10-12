@@ -85,11 +85,57 @@ namespace ECommerce.Data.Service.Concrete.Sales
             return result;
         }
 
+        public ServiceObjectResult<Basket> RemoveFromBasket(long basketID, long productID)
+        {
+            var result = new ServiceObjectResult<Basket>();
+            try
+            {
+                var basketItem = _basketItemRepository.QueryAll(op => op.BasketID == basketID && op.ProductID == productID).FirstOrDefault();
+                if (basketItem != null)
+                    _basketItemRepository.Delete(basketItem);
+
+                var basket = this.GetBasket(basketID);
+                this.Update(basket);
+                // Düzeltilecek
+                result.SetData(this.GetBasket(basketID));
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
+        public ServiceObjectResult<Basket> UpdateQuantity(long basketID, int quantity, long productID)
+        {
+            var result = new ServiceObjectResult<Basket>();
+            try
+            {
+                var basketItem = _basketItemRepository.Query().Where(op => op.BasketID == basketID && op.ProductID == productID).FirstOrDefault();
+                if (basketItem != null)
+                {
+                    basketItem.Quantity = quantity;
+                    basketItem.TotalPrice = basketItem.Price * basketItem.Quantity;
+                    _basketItemRepository.Update(basketItem);
+                }
+
+                var basket = this.GetBasket(basketID);
+                this.Update(basket);
+                // Düzeltilecek
+                result.SetData(this.GetBasket(basketID));
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
         public Basket GetCurrentUserBasket()
         {
             var userID = _tokenService.GetCurrentUserID();
             var entity = _repository.QueryAll(op => op.UserID == userID && op.BasketStatus == BasketStatusValue.InProgress).FirstOrDefault();
-            if(entity != null)
+            if (entity != null)
             {
                 entity.BasketItems = _basketItemRepository.QueryAll(op => op.BasketID == entity.ID).Include(op => op.Product).ToList();
             }
@@ -170,7 +216,6 @@ namespace ECommerce.Data.Service.Concrete.Sales
             decimal ShippingPrice = 10;
             if (entity.BasketItems != null)
             {
-
                 foreach (var basketItem in entity.BasketItems)
                 {
                     basketItem.Product = _productRepository.Get(basketItem.ProductID);
@@ -192,9 +237,7 @@ namespace ECommerce.Data.Service.Concrete.Sales
             basket.BasketStatus = BasketStatusValue.InProgress;
             _repository.Update(basket);
             return basket;
-            ;
         }
 
-        
     }
 }

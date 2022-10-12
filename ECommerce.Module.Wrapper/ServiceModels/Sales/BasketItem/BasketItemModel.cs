@@ -10,6 +10,8 @@ namespace ECommerce.Module.Wrapper.ServiceModels.Sales.BasketItem
     {
         public long ID { get; set; }
         public long ProductID { get; set; }
+        public string ProductName { get; set; }
+        public string ImagePath { get; set; }
         public long BasketID { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }

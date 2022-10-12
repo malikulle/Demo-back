@@ -2,6 +2,7 @@
 using ECommerce.Module.Wrapper.Abstract;
 using ECommerce.Module.Wrapper.ServiceModels.Catalog.Product;
 using ECommerce.Module.Wrapper.ServiceModels.Membership.User;
+using ECommerce.Module.Wrapper.ServiceModels.Sales.BasketItem;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace ECommerce.Module.Wrapper.Concrete
         }
 
         public void Format(ProductModel model)
+        {
+            if (model != null && !string.IsNullOrEmpty(model.ImagePath))
+                model.ImagePath = _settings.CDNBaseURL + model.ImagePath;
+        }
+
+        public void Format(BasketItemModel model)
         {
             if (model != null && !string.IsNullOrEmpty(model.ImagePath))
                 model.ImagePath = _settings.CDNBaseURL + model.ImagePath;

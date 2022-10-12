@@ -16,11 +16,13 @@ namespace ECommerce.Module.Wrapper.Concrete
     {
         private readonly IBasketService _basketService;
         private readonly IMapper _mapper;
+        private readonly IFormatService _formatService;
 
-        public SalesService(IBasketService basketService, IMapper mapper)
+        public SalesService(IBasketService basketService, IMapper mapper, IFormatService formatService)
         {
             _basketService = basketService;
             _mapper = mapper;
+            _formatService = formatService;
         }
 
         public ServiceObjectResult<BasketModel> AddToBasket(BasketItemModel model)
@@ -29,10 +31,15 @@ namespace ECommerce.Module.Wrapper.Concrete
             try
             {
                 var basketResult = _basketService.AddToBasket(model.BasketID, model.Quantity, model.ProductID);
-                if(!basketResult.HasFailed && basketResult.Data != null)
+                if (!basketResult.HasFailed && basketResult.Data != null)
                 {
                     var mappedModel = _mapper.Map<BasketModel>(basketResult.Data);
                     result.SetData(mappedModel);
+                }
+                if (result.Data != null && result.Data.BasketItems != null)
+                {
+                    foreach (var basketItem in result.Data.BasketItems)
+                        _formatService.Format(basketItem);
                 }
             }
             catch (Exception ex)
@@ -48,10 +55,63 @@ namespace ECommerce.Module.Wrapper.Concrete
             try
             {
                 var basket = _basketService.GetCurrentUserBasket();
-                if(basket != null)
+                if (basket != null)
                 {
                     var mappedModel = _mapper.Map<BasketModel>(basket);
                     result.SetData(mappedModel);
+                }
+                if (result.Data != null && result.Data.BasketItems != null)
+                {
+                    foreach (var basketItem in result.Data.BasketItems)
+                        _formatService.Format(basketItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
+        public ServiceObjectResult<BasketModel> RemoveFromBasket(BasketItemModel model)
+        {
+            var result = new ServiceObjectResult<BasketModel>();
+            try
+            {
+                var basketResult = _basketService.RemoveFromBasket(model.BasketID, model.ProductID);
+                if (!basketResult.HasFailed && basketResult.Data != null)
+                {
+                    var mappedModel = _mapper.Map<BasketModel>(basketResult.Data);
+                    result.SetData(mappedModel);
+                }
+                if (result.Data != null && result.Data.BasketItems != null)
+                {
+                    foreach (var basketItem in result.Data.BasketItems)
+                        _formatService.Format(basketItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Fail(ex);
+            }
+            return result;
+        }
+
+        public ServiceObjectResult<BasketModel> UpdateBasketQuantity(BasketItemModel model)
+        {
+            var result = new ServiceObjectResult<BasketModel>();
+            try
+            {
+                var basketResult = _basketService.UpdateQuantity(model.BasketID,model.Quantity,model.ProductID);
+                if (!basketResult.HasFailed && basketResult.Data != null)
+                {
+                    var mappedModel = _mapper.Map<BasketModel>(basketResult.Data);
+                    result.SetData(mappedModel);
+                }
+                if (result.Data != null && result.Data.BasketItems != null)
+                {
+                    foreach (var basketItem in result.Data.BasketItems)
+                        _formatService.Format(basketItem);
                 }
             }
             catch (Exception ex)
