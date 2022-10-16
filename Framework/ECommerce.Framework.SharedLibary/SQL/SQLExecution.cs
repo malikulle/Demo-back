@@ -47,7 +47,6 @@ namespace ECommerce.Framework.SharedLibary.SQL
 
         private static object ExecuteCommandPostgreSQL(string cmdText, Dictionary<string, object> parameters)
         {
-            return null;
             using (var conn = new NpgsqlConnection(DatabaseConnection.ConnectionString))
             {
                 conn.Open();
