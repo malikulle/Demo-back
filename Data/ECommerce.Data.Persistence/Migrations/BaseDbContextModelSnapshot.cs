@@ -1082,7 +1082,7 @@ namespace ECommerce.Data.Persistence.Migrations
                             CodeISO3 = "TUR",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateModified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Türkite",
+                            Name = "Türkiye",
                             PhoneCode = "90",
                             StatusID = (byte)1,
                             UserCreatedID = 0L,
@@ -1119,6 +1119,28 @@ namespace ECommerce.Data.Persistence.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Category", "Catalog");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7560),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7569),
+                            Name = "Telefon",
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 2L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7571),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7572),
+                            Name = "Bilgisayar",
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        });
                 });
 
             modelBuilder.Entity("ECommerce.Data.Domain.Catalog.Category_i18n", b =>
@@ -1205,6 +1227,99 @@ namespace ECommerce.Data.Persistence.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Product", "Catalog");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1L,
+                            CategoryID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7591),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7592),
+                            ImagePath = "/Data/TempImg/1.jpg",
+                            Name = "Samsung S5",
+                            Price = 2000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 2L,
+                            CategoryID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7594),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7595),
+                            ImagePath = "/Data/TempImg/2.jpg",
+                            Name = "Samsung S6",
+                            Price = 3000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 3L,
+                            CategoryID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7596),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7596),
+                            ImagePath = "/Data/TempImg/3.jpg",
+                            Name = "Samsung S7",
+                            Price = 4000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 4L,
+                            CategoryID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7598),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7598),
+                            ImagePath = "/Data/TempImg/4.jpg",
+                            Name = "Samsung S8",
+                            Price = 5000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 5L,
+                            CategoryID = 1L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7599),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7600),
+                            ImagePath = "/Data/TempImg/5.jpg",
+                            Name = "Samsung S9",
+                            Price = 6000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 6L,
+                            CategoryID = 2L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7602),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7603),
+                            ImagePath = "/Data/TempImg/6.jpg",
+                            Name = "IPhone 6",
+                            Price = 4000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        },
+                        new
+                        {
+                            ID = 7L,
+                            CategoryID = 2L,
+                            DateCreated = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7604),
+                            DateModified = new DateTime(2022, 10, 16, 18, 32, 33, 879, DateTimeKind.Local).AddTicks(7604),
+                            ImagePath = "/Data/TempImg/6.jpg",
+                            Name = "IPhone 7",
+                            Price = 5000m,
+                            StatusID = (byte)1,
+                            UserCreatedID = 0L,
+                            UserModifiedID = 0L
+                        });
                 });
 
             modelBuilder.Entity("ECommerce.Data.Domain.Catalog.Product_i18n", b =>
@@ -1801,8 +1916,8 @@ namespace ECommerce.Data.Persistence.Migrations
                             FullName = "Admin Admin",
                             IsGlobalAdmin = true,
                             Name = "Admin",
-                            PasswordHash = new byte[] { 1, 84, 112, 73, 48, 5, 186, 68, 133, 38, 47, 183, 10, 224, 121, 244, 242, 35, 53, 208, 200, 73, 81, 91, 214, 157, 238, 18, 64, 17, 232, 119, 210, 70, 76, 88, 38, 240, 179, 135, 67, 48, 10, 248, 121, 126, 24, 58, 74, 178, 202, 9, 231, 5, 179, 196, 105, 167, 218, 40, 179, 242, 201, 112 },
-                            PasswordSalt = new byte[] { 151, 239, 8, 107, 246, 88, 129, 231, 78, 133, 212, 40, 5, 250, 19, 109, 101, 170, 104, 99, 6, 234, 28, 47, 44, 223, 43, 234, 46, 186, 139, 226, 101, 92, 22, 69, 0, 84, 165, 204, 31, 32, 246, 53, 222, 160, 193, 179, 201, 46, 160, 188, 92, 179, 113, 137, 122, 21, 88, 19, 251, 224, 34, 248, 10, 28, 195, 19, 183, 205, 1, 190, 87, 232, 223, 141, 217, 118, 104, 14, 36, 98, 100, 5, 192, 246, 83, 57, 122, 120, 212, 124, 182, 173, 249, 126, 191, 64, 227, 141, 244, 208, 47, 203, 48, 125, 226, 17, 59, 13, 202, 145, 182, 197, 136, 116, 16, 193, 56, 227, 207, 44, 229, 121, 213, 140, 60, 146 },
+                            PasswordHash = new byte[] { 97, 216, 200, 125, 245, 90, 96, 192, 134, 223, 241, 3, 44, 173, 18, 154, 160, 0, 47, 72, 217, 200, 82, 98, 199, 116, 63, 82, 3, 20, 242, 176, 116, 249, 168, 157, 36, 88, 68, 213, 62, 33, 19, 48, 106, 136, 228, 237, 65, 109, 234, 168, 199, 249, 33, 158, 47, 169, 51, 22, 205, 103, 203, 243 },
+                            PasswordSalt = new byte[] { 128, 74, 237, 184, 4, 55, 154, 183, 173, 6, 201, 37, 142, 144, 3, 41, 28, 19, 66, 167, 11, 42, 128, 123, 130, 211, 220, 43, 234, 18, 95, 129, 49, 147, 239, 25, 116, 134, 56, 5, 117, 123, 26, 21, 99, 143, 35, 111, 24, 179, 204, 221, 192, 115, 192, 177, 241, 217, 227, 30, 111, 53, 84, 190, 147, 200, 206, 242, 255, 134, 46, 183, 46, 194, 9, 116, 172, 204, 57, 121, 230, 60, 54, 255, 105, 23, 90, 95, 168, 234, 138, 14, 122, 23, 15, 95, 156, 143, 77, 147, 139, 122, 122, 155, 172, 114, 88, 130, 50, 44, 182, 68, 216, 198, 99, 22, 22, 71, 95, 86, 203, 88, 139, 6, 100, 218, 28, 154 },
                             RoleID = 1L,
                             StatusID = (byte)1,
                             Surname = "Admin",
@@ -1818,8 +1933,8 @@ namespace ECommerce.Data.Persistence.Migrations
                             FullName = "User User",
                             IsGlobalAdmin = false,
                             Name = "User",
-                            PasswordHash = new byte[] { 1, 84, 112, 73, 48, 5, 186, 68, 133, 38, 47, 183, 10, 224, 121, 244, 242, 35, 53, 208, 200, 73, 81, 91, 214, 157, 238, 18, 64, 17, 232, 119, 210, 70, 76, 88, 38, 240, 179, 135, 67, 48, 10, 248, 121, 126, 24, 58, 74, 178, 202, 9, 231, 5, 179, 196, 105, 167, 218, 40, 179, 242, 201, 112 },
-                            PasswordSalt = new byte[] { 151, 239, 8, 107, 246, 88, 129, 231, 78, 133, 212, 40, 5, 250, 19, 109, 101, 170, 104, 99, 6, 234, 28, 47, 44, 223, 43, 234, 46, 186, 139, 226, 101, 92, 22, 69, 0, 84, 165, 204, 31, 32, 246, 53, 222, 160, 193, 179, 201, 46, 160, 188, 92, 179, 113, 137, 122, 21, 88, 19, 251, 224, 34, 248, 10, 28, 195, 19, 183, 205, 1, 190, 87, 232, 223, 141, 217, 118, 104, 14, 36, 98, 100, 5, 192, 246, 83, 57, 122, 120, 212, 124, 182, 173, 249, 126, 191, 64, 227, 141, 244, 208, 47, 203, 48, 125, 226, 17, 59, 13, 202, 145, 182, 197, 136, 116, 16, 193, 56, 227, 207, 44, 229, 121, 213, 140, 60, 146 },
+                            PasswordHash = new byte[] { 97, 216, 200, 125, 245, 90, 96, 192, 134, 223, 241, 3, 44, 173, 18, 154, 160, 0, 47, 72, 217, 200, 82, 98, 199, 116, 63, 82, 3, 20, 242, 176, 116, 249, 168, 157, 36, 88, 68, 213, 62, 33, 19, 48, 106, 136, 228, 237, 65, 109, 234, 168, 199, 249, 33, 158, 47, 169, 51, 22, 205, 103, 203, 243 },
+                            PasswordSalt = new byte[] { 128, 74, 237, 184, 4, 55, 154, 183, 173, 6, 201, 37, 142, 144, 3, 41, 28, 19, 66, 167, 11, 42, 128, 123, 130, 211, 220, 43, 234, 18, 95, 129, 49, 147, 239, 25, 116, 134, 56, 5, 117, 123, 26, 21, 99, 143, 35, 111, 24, 179, 204, 221, 192, 115, 192, 177, 241, 217, 227, 30, 111, 53, 84, 190, 147, 200, 206, 242, 255, 134, 46, 183, 46, 194, 9, 116, 172, 204, 57, 121, 230, 60, 54, 255, 105, 23, 90, 95, 168, 234, 138, 14, 122, 23, 15, 95, 156, 143, 77, 147, 139, 122, 122, 155, 172, 114, 88, 130, 50, 44, 182, 68, 216, 198, 99, 22, 22, 71, 95, 86, 203, 88, 139, 6, 100, 218, 28, 154 },
                             RoleID = 2L,
                             StatusID = (byte)1,
                             Surname = "User",

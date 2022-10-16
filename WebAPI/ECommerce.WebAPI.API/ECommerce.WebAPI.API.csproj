@@ -19,8 +19,4 @@
     <ProjectReference Include="..\..\Module\ECommerce.Module.Integration\ECommerce.Module.Integration.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>

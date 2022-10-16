@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XPBEnMv16cyw0HlhgXEaXvyLoEDytiUiuAybamh2nPQ=",
+  "Hash": "JHUeDzenIi2OXsSgubn3lFHN6oPN3BGTMMQm8FRhyRA=",
   "Source": "ECommerce.WebAPI.API",
   "BasePath": "_content/ECommerce.WebAPI.API",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\137_54_13_21_3_10_2022.jpg",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\1.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/137_54_13_21_3_10_2022.jpg",
+      "RelativePath": "Data/TempImg/1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,15 +31,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\137_54_13_21_3_10_2022.jpg"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\1.jpg"
     },
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\31_21_3_21_3_10_2022.jpg",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\2.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/31_21_3_21_3_10_2022.jpg",
+      "RelativePath": "Data/TempImg/2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -48,15 +48,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\31_21_3_21_3_10_2022.jpg"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\2.jpg"
     },
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\374_6_16_21_3_10_2022.jpg",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\3.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/374_6_16_21_3_10_2022.jpg",
+      "RelativePath": "Data/TempImg/3.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,15 +65,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\374_6_16_21_3_10_2022.jpg"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\3.jpg"
     },
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\434_1_15_21_3_10_2022.jpg",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\4.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/434_1_15_21_3_10_2022.jpg",
+      "RelativePath": "Data/TempImg/4.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,15 +82,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\434_1_15_21_3_10_2022.jpg"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\4.jpg"
     },
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\569_26_14_21_3_10_2022.webp",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\5.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/569_26_14_21_3_10_2022.webp",
+      "RelativePath": "Data/TempImg/5.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,15 +99,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\569_26_14_21_3_10_2022.webp"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\5.jpg"
     },
     {
-      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\Product\\710_52_16_21_3_10_2022.png",
+      "Identity": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\Data\\TempImg\\6.jpg",
       "SourceId": "ECommerce.WebAPI.API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\malik\\source\\repos\\ECommerce\\WebAPI\\ECommerce.WebAPI.API\\wwwroot\\",
       "BasePath": "_content/ECommerce.WebAPI.API",
-      "RelativePath": "Data/Product/710_52_16_21_3_10_2022.png",
+      "RelativePath": "Data/TempImg/6.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Data\\Product\\710_52_16_21_3_10_2022.png"
+      "OriginalItemSpec": "wwwroot\\Data\\TempImg\\6.jpg"
     }
   ]
 }

@@ -31,6 +31,8 @@ namespace ECommerce.Data.Persistence.Contexts
             modelBuilder.Entity<Role>().HasData(SeedDatabase.GetRoles());
             modelBuilder.Entity<User>().HasData(SeedDatabase.GetUsers());
             modelBuilder.Entity<Language>().HasData(SeedDatabase.GetLanguages());
+            modelBuilder.Entity<Category>().HasData(SeedDatabase.GetCategories());
+            modelBuilder.Entity<Product>().HasData(SeedDatabase.GetProducts());
         }
 
         public DbSet<Product> Products { get; set; }

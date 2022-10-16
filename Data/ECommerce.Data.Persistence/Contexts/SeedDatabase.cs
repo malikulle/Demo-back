@@ -1,4 +1,5 @@
 ﻿using ECommerce.Data.Domain.AddressBook;
+using ECommerce.Data.Domain.Catalog;
 using ECommerce.Data.Domain.Configuration;
 using ECommerce.Data.Domain.Membership;
 using ECommerce.Framework.SharedLibary.Domain.Enums;
@@ -17,7 +18,7 @@ namespace ECommerce.Data.Persistence.Contexts
         {
             return new List<Country>()
             {
-                new Country(){ID = 1,Name = "Türkite",CodeISO = "TR",CodeISO3 = "TUR",PhoneCode = "90",StatusID = StatusValue.ActiveStatusID}
+                new Country(){ID = 1,Name = "Türkiye",CodeISO = "TR",CodeISO3 = "TUR",PhoneCode = "90",StatusID = StatusValue.ActiveStatusID}
             };
         }
 
@@ -156,7 +157,7 @@ namespace ECommerce.Data.Persistence.Contexts
                 IsGlobalAdmin = false,
                 StatusID = StatusValue.ActiveStatusID,
             };
-            return new List<User>() { admin, user };    
+            return new List<User>() { admin, user };
         }
 
         public static List<Language> GetLanguages()
@@ -165,6 +166,29 @@ namespace ECommerce.Data.Persistence.Contexts
             {
                 new Language(){ID = 1,Name = "Türkçe", CultureCode = "tr" , IsoCode = "tr",StatusID = StatusValue.ActiveStatusID},
                 new Language(){ID = 2,Name = "English", CultureCode = "en" , IsoCode = "en",StatusID = StatusValue.ActiveStatusID}
+            };
+        }
+
+        public static List<Category> GetCategories()
+        {
+            return new List<Category>()
+            {
+                new Category(){ID =1 ,Name = "Telefon" , DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+                new Category(){ID =2 ,Name = "Bilgisayar" , DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID}
+            };
+        }
+
+        public static List<Product> GetProducts()
+        {
+            return new List<Product>()
+            {
+            new Product(){ID=1,Name = "Samsung S5",Price = 2000 ,CategoryID = 1, ImagePath = "/Data/TempImg/1.jpg" ,DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=2,Name = "Samsung S6",Price = 3000 ,CategoryID = 1,ImagePath = "/Data/TempImg/2.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=3,Name = "Samsung S7",Price = 4000 ,CategoryID = 1,ImagePath = "/Data/TempImg/3.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=4,Name = "Samsung S8",Price = 5000 ,CategoryID = 1,ImagePath = "/Data/TempImg/4.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=5,Name = "Samsung S9",Price = 6000 ,CategoryID = 1,ImagePath = "/Data/TempImg/5.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=6,Name = "IPhone 6",Price = 4000 ,CategoryID = 2,ImagePath = "/Data/TempImg/6.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID},
+            new Product(){ID=7,Name = "IPhone 7",Price = 5000 ,CategoryID = 2,ImagePath = "/Data/TempImg/6.jpg",DateCreated = DateTime.Now, DateModified = DateTime.Now,StatusID = StatusValue.ActiveStatusID}
             };
         }
     }
